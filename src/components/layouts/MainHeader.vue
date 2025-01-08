@@ -1,0 +1,162 @@
+<template>
+        <el-header>
+            <el-row>
+                <el-col :span="14">
+                    <div class="header-left">
+                        <el-button :icon="'House'" @click="toDashboard" class="colapse-btn" />
+                        <span class="title">
+                            <img class="title-logo" :src="logoUrl"/>
+                            <span class="title-text">{{ systemName }}</span>
+                        </span>
+                    </div>
+                </el-col>
+                <el-col :span="10">
+                    <div class="header-right">
+                        <div class="time">
+                            <span style="font-size: 14px">현재시간 : </span>
+                            <span style="font-size: 14px">{{ dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss') }}</span>
+                        </div>
+                        <el-button type="primary" circle @click="logOut()" class="logout" >
+                            <el-icon ><SwitchButton/></el-icon>
+                        </el-button>
+                        <el-button type="primary" circle @click="refresh()" class="refresh">
+                            <el-icon><Refresh /></el-icon>
+                        </el-button>
+                    </div>
+                </el-col>
+            </el-row>
+        </el-header>
+</template>
+
+<script lang="ts" setup>
+import dayjs from 'dayjs'
+
+export interface Props {
+    logoUrl: string
+    systemName: string
+}
+const { systemName, logoUrl} = defineProps<Props>()
+
+const emits = defineEmits(['logOut', 'toHome'])
+
+const toDashboard = () => {
+    emits('toHome')
+}
+
+// 로그아웃
+const logOut = () => {
+    emits('logOut')
+}
+// 현재 화면 강제 리프레쉬
+const refresh = () => {
+    location.reload()
+}
+</script>
+
+<style scoped>
+/* header  */
+.el-header {
+    height: 50px;
+    background-color: var(--color-black);
+    width: 100%;
+    align-items: center;
+    padding-left: 8px;
+}
+.el-row,
+.el-col,
+.header-left,
+.header-right {
+    height: 100%;
+}
+
+/* header left ------------ */
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+.header-left .colapse-btn {
+    border: none;
+    background-color: transparent;
+    color: #dddddd;
+    padding: 0 !important;
+}
+:deep(.colapse-btn .el-icon),
+:deep(.colapse-btn .el-icon svg) {
+    height: 24px;
+    width: 24px;
+}
+.header-left .title {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 20px;
+    text-decoration-line: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.header-left .title-logo{
+    height: 22px;
+    margin-right: 12px;
+    margin-top: -3px;
+}
+.header-left .title-text{
+    font-size: 20px;
+    display: block;
+    font-family: 'SK_namuhx_B';
+    margin-top: 2px;
+}
+
+
+/* header right ------------ */
+.header-right {
+    text-align: right;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header-right .time {
+    padding: 0 20px;
+    font-weight: 500;
+}
+.header-right .time .time-lable{
+    font-size: 17px;
+}
+.header-right .time .time-value{
+    font-size: 18px;
+}
+.header-right .logout {
+    margin-right: 4px;
+    border: none;
+    background-color: var(--primary-color);
+}
+.header-right .logout:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.header-right .logout .el-icon  {
+    width: 18px;
+    height: 18px;
+    transform: rotate(90deg);
+}
+.header-right .logout .el-icon svg {
+    width: 18px;
+    height: 18px;
+}
+.header-right .refresh {
+    background: var(--color-orange);
+    border: none;
+    margin-right: 8px;
+}
+.header-right .refresh .el-icon {
+    width: 18px;
+    height: 18px;
+}
+.header-right .refresh .el-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+</style>
