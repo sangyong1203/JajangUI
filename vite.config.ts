@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import ViteDts from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode })=>{
@@ -18,6 +19,14 @@ export default defineConfig(({ mode })=>{
       ViteDts({ 
         // Enable `insertTypes` option if you want to automatically insert types into the library's entry file
         insertTypesEntry: true 
+      }),
+      viteStaticCopy({
+        targets: [
+          {
+            src: 'src/assets/*',
+            dest: 'src/assets', // Copy to dist/assets
+          },
+        ],
       }),
       // 자동 import Element components
       AutoImport({
