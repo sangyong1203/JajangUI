@@ -93,13 +93,15 @@
       "import": "./dist/jajang-ui.es.js",
       "require": "./dist/jajang-ui.umd.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist",
     "README.md",
     "package.json",
     "jajang-ui.d.ts",
+    "dist/style.css",
     "types"
   ]
 }
