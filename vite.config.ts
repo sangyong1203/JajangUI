@@ -33,7 +33,7 @@ export default defineConfig(({ mode })=>{
     },
     build: {
       lib: {
-        entry: './src/main.ts',
+        entry: './src/index.ts',
         name: 'JajangUI',
         fileName: (format) => `jajang-ui.${format}.js`,
       },

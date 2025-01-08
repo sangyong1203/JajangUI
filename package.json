@@ -1,9 +1,11 @@
 {
   "name": "jajang-ui",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "private": false,
   "type": "module",
-  "main": "main.ts",
+  "main": "./dist/jajang-ui.umd.js",
+  "module": "./dist/jajang-ui.es.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -55,16 +57,23 @@
     "unplugin-vue-components": "^0.26.0",
     "vue-tsc": "^2.0.11"
   },
-  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "description": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
 
   "exports": {
     ".": {
-      "import": "./dist/jajang-ui.esm.js",
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/jajang-ui.es.js",
       "require": "./dist/jajang-ui.umd.js"
     },
     "./package.json": "./package.json"
-  }
+  },
+  "files":[
+    "dist",
+    "README.md",
+    "package.json",
+    "types"
+  ]
 }

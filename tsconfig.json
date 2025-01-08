@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", ".env", "src/**/*", "src/**/*.vue", "src/**/*.d.ts", "*.d.ts", "src/xlsx/XLSX.min.js", "*.xlsx", "src/App.vue", "src/shims-vue.d.ts"],
+  "include": ["types/env.d.ts", ".env", "src/**/*", "src/**/*.vue", "src/**/*.d.ts", "types/*.d.ts", "*.d.ts", "src/xlsx/XLSX.min.js", "*.xlsx", "src/App.vue", "src/shims-vue.d.ts"],
   "exclude": ["src/**/__tests__/*", "node_modules"],
   "compilerOptions": {
 
