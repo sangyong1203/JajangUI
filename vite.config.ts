@@ -47,6 +47,17 @@ export default defineConfig(({ mode })=>{
         fileName: (format) => `jajang-ui.${format}.js`,
       },
       rollupOptions: {
+        // external: [
+        //   'vue',                // Vue is a common external library
+        //   'element-plus',       // Element Plus should not be bundled
+        //   'vue-konva',          // vue-konva should not be bundled
+        //   '@element-plus/icons-vue', // Element Plus icon package
+        //   '@toast-ui/editor',   // If you use Toast UI editor
+        //   'echarts',            // If you use ECharts
+        //   'pinia',              // Pinia should not be bundled
+        //   'tui-grid',           // TUI Grid should not be bundled
+        //   'xlsx',               // If you are using xlsx in the library
+        // ],
         output: {
           // This ensures named exports are handled properly
           exports: 'named',  // 'named' for named exports (avoids the default warning)
