@@ -27,6 +27,7 @@
 </template>
 <script lang="ts" setup>
 import { toRefs } from 'vue'
+import { ElPageHeader, ElBreadcrumb,ElBreadcrumbItem, ElIcon } from 'element-plus'
 
 export interface Props {
     title: string
