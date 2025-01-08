@@ -6,6 +6,7 @@
   "main": "./dist/jajang-ui.umd.js",
   "module": "./dist/jajang-ui.es.js",
   "types": "./dist/jajang-ui.d.ts",
+  "style": "./dist/style.css",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
