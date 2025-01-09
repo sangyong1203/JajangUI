@@ -31,4 +31,6 @@ export  {default as PieChart} from './widget/PieChart.vue';
 export  {default as GridTable} from './widget/GridTable.vue';
 export  {default as Editor} from './widget/Editor.vue';
 export  {default as FullscreenProgress} from './widget/FullscreenProgress.vue';
+export  {default as ConfigProvider} from './widget/ConfigProvider.vue';
+
 
