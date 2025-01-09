@@ -94,7 +94,8 @@
       "require": "./dist/jajang-ui.umd.js"
     },
     "./dist/style.css": "./dist/style.css",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./jajang-ui":"./jajang-ui"
   },
   "files": [
     "dist/",
