@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts" setup>
-export interface Props {
+export interface SearchBoxProps {
     extra?: boolean
     onSearch: (params?: any) => void
 }
-const { onSearch } = defineProps<Props>()
+const { onSearch } = defineProps<SearchBoxProps>()
 </script>
 
 <style scoped>

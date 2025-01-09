@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import {  toRefs, computed } from 'vue'
-export interface Props {
+export interface SingleDatePickerProps {
     label?: string | null
     labelWidth?: string | null // label 너비 조절
     width?: string | null // 총 너비 조절, 100% 로 설정시 총 너비가 부모노드 너비 맞춤
@@ -28,8 +28,8 @@ export interface Props {
     disabled?: boolean
     disabledDate?: (params:any) => boolean
 }
-const props = defineProps<Props>()
-const { modelValue, disabledDate } = toRefs<Props>(props)
+const props = defineProps<SingleDatePickerProps>()
+const { modelValue, disabledDate } = toRefs<SingleDatePickerProps>(props)
 
 const emits = defineEmits(['update:modelValue'])
 

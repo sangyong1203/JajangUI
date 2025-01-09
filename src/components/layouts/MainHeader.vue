@@ -31,11 +31,11 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 
-export interface Props {
+export interface MainHeaderProps {
     logoUrl: string
     systemName: string
 }
-const { systemName, logoUrl} = defineProps<Props>()
+const { systemName, logoUrl} = defineProps<MainHeaderProps>()
 
 const emits = defineEmits(['logOut', 'toHome'])
 

@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 
-export interface Props{
+export interface OperationBoxProps{
   total?: number
   title?: string
   topLine?: boolean
@@ -28,7 +28,7 @@ export interface Props{
   unit?: string
 }
 
-const { totalLabel, total, unit } = defineProps<Props>()
+const { totalLabel, total, unit } = defineProps<OperationBoxProps>()
 </script>
 
 <style scoped>

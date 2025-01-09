@@ -59,7 +59,7 @@ import { onMounted, toRefs } from 'vue'
 import { OperationButton } from '@/components'
 
 type AuthType = 'GET' | 'POST' | 'PUT' | 'DELETE'
-export interface Props {
+export interface BasicDialogProps {
     title: string // 다이얼로그 헤더 타이틀
     description?: string
     height?: string
@@ -73,7 +73,7 @@ export interface Props {
 type ButtonType = '저장' | '취소' | '수정' | '삭제' | '확인' | '닫기' | '선택'
 
 
-const props = defineProps<Props>()
+const props = defineProps<BasicDialogProps>()
 const { title, description, width, height, buttonTypes, modelValue, isEdit, auth } = toRefs(props)
 const emits = defineEmits(['update:modelValue', 'onSave', 'onEdit', 'onDelete', 'onCancel', 'onConfirm', 'onSelect', 'onClose'])
 

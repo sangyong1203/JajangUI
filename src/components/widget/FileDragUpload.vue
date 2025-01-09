@@ -35,7 +35,7 @@ import type { UploadFile, UploadFiles } from 'element-plus'
 const localLang = inject('localLang')
 const L:any = localLang??{} 
 
-export interface Props {
+export interface FileDragUploadProps {
     disabled?: boolean
     message?: string // tip 메시지
     size?: number // 최대 파일 크기, 단위: KB
@@ -46,7 +46,7 @@ export interface Props {
     buttonName?: string
     description?: string
 }
-const props = defineProps<Props>()
+const props = defineProps<FileDragUploadProps>()
 const { disabled, size, width, height, buttonName, description } = toRefs(props)
 const uploadRef: any = ref(null)
 const loading = ref<boolean>(false)

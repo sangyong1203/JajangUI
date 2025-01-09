@@ -17,12 +17,12 @@
 import { toRefs} from 'vue'
 import { ElPagination} from 'element-plus'
 
-export interface Props {
+export interface PaginationProps {
     totalRow: number // 현재 총 data 로우 수
     page: number //현재 페이지 번호
     rowSize: number //페이징 로우, 매페이지 로우 수
 }
-const props = defineProps<Props>()
+const props = defineProps<PaginationProps>()
 const { totalRow, page,  rowSize } = toRefs(props)
 
 const options = [10, 15, 20, 30, 50, 100, 200]

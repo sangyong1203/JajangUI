@@ -10,7 +10,7 @@ import Grid from 'tui-grid';
 import type { OptColumn, OptComplexColumnInfo, OptRowHeader } from 'tui-grid/types/options';
 import {dateFormat} from '@/utils/index'
 
-export interface Props {
+export interface GridTableProps {
     columns: OptColumn[] // 컬럼 설정
     complexColumns?: OptComplexColumnInfo[]
     cell?:any // cell 설정
@@ -31,7 +31,7 @@ export interface Props {
     sortColumn?: string
     sortAscending?: boolean
 }
-const props = withDefaults(defineProps<Props>(),{
+const props = withDefaults(defineProps<GridTableProps>(),{
     multiple: true
 }) 
 const gridRef:any = ref(null)

@@ -17,14 +17,14 @@
 
 <script lang="ts" setup>
 import { Search } from '@element-plus/icons-vue'
-export interface Props {
+export interface SearchTextProps {
     label?: string | null
     labelWidth?: string | null // label 너비 조절
     width?: string | null // 총 너비 조절, 100% 로 설정시 총 너비가 부모노드 너비 맞춤
     placeholder?: string | null
     modelValue: string | number | null
 }
-const props = defineProps<Props>()
+const props = defineProps<SearchTextProps>()
 const emits = defineEmits(['update:modelValue', 'onEnter'])
 
 const onInput = (value: any) => {

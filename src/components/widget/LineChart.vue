@@ -13,7 +13,24 @@
 import { onMounted, reactive, ref, toRefs, watch } from 'vue'
 import * as echarts from 'echarts'
 
-export interface Props {
+/**
+ * @attribute title: string
+ * @attribute xAxisData: string[] // x 좌표 선 아래 표시하는 데이터 
+ * @attribute seriesData: any[] // 데이터 및 차트 line 혹은 bar 설정
+ * @attribute type: 'line' | 'bar' // 차트 형식, bar 혹 line 형
+ * @attribute unit?: string // y축 단위 등을 표시할때 
+ * @attribute legendData?: string[] // 예: ['A제품','B제품','C제품',]
+ * @attribute color?: string[] // 차트 색상 
+ * @attribute boundaryGap?: boolean
+ * @attribute gridTop?: number // 차트 위치 조절
+ * @attribute gridRight?: number // 차트 오른쪽 위치 조절
+ * @attribute gridLeft?: number // 차트 외쪽 위치 조절
+ * @attribute girdBottom?: number // 차트 아래 위치 조절
+ * @attribute legendOrient?: string // legend 방향
+ * @attribute legendLeft?: number //  legend 좌측 위치조절
+ * @attribute yMax?: number // y축 최대 수치
+ */
+export interface LineChartProps {
     title: string
     xAxisData: string[] // x 좌표 선 아래 표시하는 데이터 
     seriesData: any[] // 데이터 및 차트 line 혹은 bar 설정
@@ -32,7 +49,7 @@ export interface Props {
 
 }
 
-const props = defineProps<Props>()
+const props = defineProps<LineChartProps>()
 const { title, legendData, xAxisData, seriesData, unit, color, type, gridTop, gridRight, gridLeft, girdBottom, legendOrient, legendLeft, yMax } = toRefs(props)
 
 

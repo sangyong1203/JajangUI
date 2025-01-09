@@ -7,11 +7,11 @@
     </div>
 </template>
 <script lang="ts" setup>
-export interface Props {
+export interface PageBodyProps {
     flexDirection?: 'row' | 'column' // PageBody안에 원소들의 flex direction 설정  'row' | 'column', 디폴드는 'column'
     gap?:string
 }
-withDefaults(defineProps<Props>(),{
+withDefaults(defineProps<PageBodyProps>(),{
     flexDirection:'column'
 })
 </script>

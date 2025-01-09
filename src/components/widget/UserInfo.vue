@@ -25,7 +25,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, toRefs, watch } from 'vue';
-export interface Props{
+export interface UserInfoProps{
     collapse: boolean
     userData:{
         name: string
@@ -34,7 +34,7 @@ export interface Props{
         loginTime: string
     }
 }
-const prop= defineProps<Props>()
+const prop= defineProps<UserInfoProps>()
 const { collapse, userData } = toRefs(prop)
 
 const activeNames = ref('')

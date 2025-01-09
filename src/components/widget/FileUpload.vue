@@ -30,7 +30,7 @@
 <script setup lang="ts">
 import { toRefs, ref } from 'vue'
 import { Notification } from '../../feedback/index'
-export interface Props {
+export interface FileUploadProps {
     label: string
     uploadedFiles?: any // 이미 DB에 저장한 파일 
     disabled?: boolean 
@@ -39,7 +39,7 @@ export interface Props {
     limit?: number // 최대 첨부 파일 수량
     size?: number  // 최대 파일 크기, 단위: KB
 }
-const props = defineProps<Props>()
+const props = defineProps<FileUploadProps>()
 const { label, uploadedFiles, disabled, message ,accept, limit, size} = toRefs(props)
 
 const uploadRef:any = ref(null)

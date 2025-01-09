@@ -13,7 +13,7 @@
 import { onMounted, reactive, ref, toRefs, watch } from 'vue'
 import * as echarts from 'echarts'
 
-export interface Props {
+export interface PieChartProps {
     title: string
     unit?: string // y축 단위 등을 표시할때 
     legendData?: string[] 
@@ -26,7 +26,7 @@ export interface Props {
 
 }
 
-const props = defineProps<Props>()
+const props = defineProps<PieChartProps>()
 const { title, legendData, seriesData, unit, color, legendOrient, legendLeft } = toRefs(props)
 
 

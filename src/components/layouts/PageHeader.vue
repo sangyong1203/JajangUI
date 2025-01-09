@@ -29,14 +29,14 @@
 import { toRefs } from 'vue'
 import { ElPageHeader, ElBreadcrumb,ElBreadcrumbItem, ElIcon } from 'element-plus'
 
-export interface Props {
+export interface PageHeaderProps {
     title: string
     description?: string
     hideIcon?: boolean
     nav: { name:string, path:string } []
     isLoading: boolean
 }
-const props = defineProps<Props>()
+const props = defineProps<PageHeaderProps>()
 const { title, description, hideIcon, nav, isLoading} = toRefs(props)
 const emits = defineEmits(['backTo'])
 

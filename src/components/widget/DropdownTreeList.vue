@@ -19,7 +19,7 @@
   <script lang="ts" setup>
   import { toRefs, ref, watch } from 'vue'
   
-  export interface Props {
+  export interface DropdownTreeListProps {
     label?: string | null
     labelWidth?: string | null // label 너비 조절
     width?: string | null // 총 너비 조절, 100% 로 설정시 총 너비가 부모노드 너비 맞춤
@@ -32,7 +32,7 @@
     modelValue: string | number | null
   }
   
-  const props = defineProps<Props>()
+  const props = defineProps<DropdownTreeListProps>()
   const { label, labelWidth, width, placeholder, disabled, optionLabel, optionValue, list } = toRefs(props)
   
   const dataList = ref([])

@@ -35,18 +35,18 @@ import { Notification } from '../../feedback/index'
 import { toRefs, inject } from 'vue'
 
 // 다국어 설정 
-const localLang = inject('localLang')
+const localLang = inject('localLang')!
 const L:any = localLang??{} 
 
 type AuthType = 'GET' | 'POST' | 'PUT' | 'DELETE'
-export interface Props {
+export interface OperationButtonProps {
     type: '등록' | '개별등록' | '수정' | '변경' | '저장' | '추가' | '삭제' | '취소' | '목록' | '해제' | '일시정지' | '영구정지' | '승인' | '반려' | '닫기' | '확인' | '다음' | '이전' | '완료' | '선택' | '기타'
     auth?: AuthType[]
     disabled?: boolean
     label?: string
     buttonType?: '' | 'default' | 'primary' | 'info' | 'warning' | 'danger' | 'text' | 'success' // el-button type
 }
-const props = defineProps<Props>()
+const props = defineProps<OperationButtonProps>()
 const { type, auth, disabled, label, buttonType } = toRefs(props)
 const emits = defineEmits(['click'])
 const onClick = () => {

@@ -8,10 +8,10 @@ import { ref, toRefs, onMounted, nextTick } from 'vue'
 const editor:any = ref(null)
 const tuiEditerRef:any = ref(null)
 
-export interface Props {
+export interface EditorProps {
     content: string
 }
-const props = defineProps<Props>()
+const props = defineProps<EditorProps>()
 const { content } = toRefs(props)
 onMounted(()=>{
     nextTick(()=>{

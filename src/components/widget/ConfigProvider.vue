@@ -6,12 +6,12 @@
 <script lang="ts" setup>
 import { provide, toRefs } from 'vue'
 
-export interface Props {
-    local:any
+export interface ConfigProviderProps {
+    local?:any
     globalData?: any
 }
-const props =  defineProps<Props>()
+const props =  defineProps<ConfigProviderProps>()
 const { local, globalData } = toRefs(props)
-provide('localLang', local)
-provide('globalData', globalData)
+provide('localLang', local.value??{})
+provide('globalData', globalData.value??{})
 </script>

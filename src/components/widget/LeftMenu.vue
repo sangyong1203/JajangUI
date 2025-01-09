@@ -71,11 +71,11 @@ interface Menu {
     useYn: string
     children: Menu[] 
 }
-export interface Props {
+export interface LeftMenuProps {
     menu: Menu[]
     defaultActivate: string
 }
-const props = defineProps<Props>()
+const props = defineProps<LeftMenuProps>()
 const { menu, defaultActivate } = toRefs(props)
 
 const collapse = ref(false)

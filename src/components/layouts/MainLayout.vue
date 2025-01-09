@@ -24,11 +24,11 @@
 
 <script lang="ts" setup>
 
-export interface Props {
+export interface MainLayoutProps {
     footerLogoUrl: string
     copyright: string
 }
-const { copyright, footerLogoUrl} = defineProps<Props>()
+const { copyright, footerLogoUrl} = defineProps<MainLayoutProps>()
 
 </script>
 

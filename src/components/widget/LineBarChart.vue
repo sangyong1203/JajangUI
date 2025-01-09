@@ -11,7 +11,7 @@
 import { onMounted, reactive, ref, toRefs, watch } from 'vue'
 import * as echarts from 'echarts'
 
-export interface Props {
+export interface LineBarChartProps {
     title?: string
     xAxisData: string[] // x 좌표 선 아래 표시하는 데이터
     series: any[] // 데이터 및 차트 line 혹은 bar 설정
@@ -29,7 +29,7 @@ export interface Props {
     yMax?: number // y축 최대 수치
 }
 
-const props = defineProps<Props>()
+const props = defineProps<LineBarChartProps>()
 const {
     title,
     legendData,

@@ -32,7 +32,7 @@
 import { computed, ref, watch, type ComputedRef } from 'vue'
 import dayjs from 'dayjs'
 
-export interface Props {
+export interface DoubleDatePickerProps {
     label?: string | null
     labelWidth?: string | null // label 너비 조절
     width?: string | null // 총 너비 조절, 100% 로 설정시 총 너비가 부모노드 너비 맞춤
@@ -43,7 +43,7 @@ export interface Props {
     type?: 'year' | 'month' | 'week' | 'day' | 'hour' | null // 날짜 격식 년/월/일 종류
     disabled?: boolean
 }
-const props = defineProps<Props>()
+const props = defineProps<DoubleDatePickerProps>()
 const startDate: any = ref(props.startDate)
 const endDate: any = ref(props.endDate)
 const weekDate: any = computed(()=>{

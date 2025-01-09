@@ -32,7 +32,7 @@
 <script lang="ts" setup>
 import { toRefs } from 'vue'
 
-export interface Props {
+export interface DropdownListProps {
     label?: string | null
     labelWidth?: string | null // label 너비 조절
     width?: string | null // 총 너비 조절, 100% 로 설정시 총 너비가 부모노드 너비 맞춤
@@ -48,7 +48,7 @@ export interface Props {
     popperClass?: string // 선택 클리시 팝업 리스트 창에 class 추가 필요시 이 속성에 class명을 입력
 }
 
-const props = defineProps<Props>()
+const props = defineProps<DropdownListProps>()
 const { label, labelWidth, width, size, placeholder, multiple, modelValue, disabled, optionLabel, optionValue, list } =
     toRefs(props)
 
