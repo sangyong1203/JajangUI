@@ -5,8 +5,7 @@ export  { useProgress } from '../stores/Progress.ts';
 export  { useNavigation} from '../stores/Navigation.ts';
 export  { useRequestDefence } from '../stores/RequestDefence.ts';
 
-// export  {default as MainLayout} from './layouts/MainLayout.vue';
-
+export  {default as MainLayout} from './layouts/MainLayout.vue';
 export  {default as PageHeader} from './layouts/PageHeader.vue';
 export  {default as PageBody} from './layouts/PageBody.vue';
 export  {default as BasicDialog} from './dialog/BasicDialog.vue';

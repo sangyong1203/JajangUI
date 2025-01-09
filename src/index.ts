@@ -19,7 +19,10 @@ import { useRequestDefence } from '@/stores/RequestDefence'
 // const pinia = createPinia()
 // export default JajangUI
 const {
-    // MainLayout,
+    Feedback,
+    Utils,
+    Excel,
+    MainLayout,
     PageHeader,
     PageBody,
     BasicDialog,
@@ -47,6 +50,10 @@ const {
     FullscreenProgress,
 } = JajangUI
 export {
+    Feedback,
+    Utils,
+    Excel,
+    MainLayout,
     useProgress,
     useNavigation, 
     useRequestDefence,
@@ -82,11 +89,12 @@ export {
 export default {
     install(app: App) {
         // app.use(pinia)
-        app.use(print)
+        // app.use(print)
         // app.use(TuiGrid)
         // app.use(VueKonva)
         //   app.component('MainLayout', MainLayout)
         // app.component('JajangUI', JajangUI)
+        app.component('MainLayout', MainLayout)
         app.component('PageHeader', PageHeader)
         app.component('PageBody', PageBody)
         app.component('BasicDialog', BasicDialog)
