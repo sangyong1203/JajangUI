@@ -18,6 +18,7 @@ const {
     Feedback,
     Utils,
     Excel,
+    MainHeader,
     MainLayout,
     PageHeader,
     PageBody,
@@ -53,6 +54,7 @@ export {
     useProgress,
     useNavigation, 
     useRequestDefence,
+    MainHeader,
     MainLayout,
     PageHeader,
     PageBody,
@@ -90,6 +92,7 @@ export default {
         app.use(pinia)
         app.use(TuiGrid)
         app.use(VueKonva)
+        app.component('MainHeader', MainHeader)
         app.component('MainLayout', MainLayout)
         app.component('PageHeader', PageHeader)
         app.component('PageBody', PageBody)
