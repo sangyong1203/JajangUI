@@ -1,6 +1,6 @@
 {
   "name": "jajang-ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "private": false,
   "type": "module",
   "main": "./dist/jajang-ui.umd.js",
@@ -95,7 +95,7 @@
     },
     "./dist/style.css": "./dist/style.css",
     "./package.json": "./package.json",
-    "./jajang-ui":"./jajang-ui"
+    "./jajang-ui": "./jajang-ui"
   },
   "files": [
     "dist/",
