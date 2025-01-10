@@ -1,6 +1,6 @@
 
 declare module 'jajang-ui' {
-
+  import { DefineComponent } from 'vue';
   export const MainLayout: DefineComponent<{}, {}, any>;
   export const MainHeader: DefineComponent<{}, {}, any>;
   export const PageHeader: DefineComponent<{}, {}, any>;
@@ -28,6 +28,4 @@ declare module 'jajang-ui' {
   export const GridTable: DefineComponent<{}, {}, any>;
   export const Editor: DefineComponent<{}, {}, any>;
   export const FullscreenProgress: DefineComponent<{}, {}, any>;
-
-
 }
