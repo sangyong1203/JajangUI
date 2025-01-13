@@ -11,7 +11,34 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode })=>{
-  return {
+   const viewMode = {
+    // base:'https://example.com',
+    plugins: [
+      vue(),
+      // 자동 import Element components
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+  
+    css: {
+      preprocessorOptions: {
+        // to avoid legacy JS Api Deprecation Warning
+        scss: {
+          api: 'modern-compiler', // or "modern", "legacy"
+        },
+      },
+    },
+  }
+  const publishBuildMode = {
 
     // base:'https://example.com',
     plugins: [
@@ -84,4 +111,7 @@ export default defineConfig(({ mode })=>{
       },
     },
   }
+  const returnMode = mode==='development'? viewMode : publishBuildMode
+  console.log('mode', mode)
+  return returnMode
 })

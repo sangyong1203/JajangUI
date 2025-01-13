@@ -1,0 +1,345 @@
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+
+export interface Menu {
+    id: number
+    title: string
+    path: string
+    icon: string
+    children: Menu[] // 일력력
+}
+
+export const useMenuStore = defineStore('menu', () => {
+    const data = ref<Menu[]>([])
+    const init = () => {
+        data.value = []
+    }
+    const getMenu = (): Menu[] => {
+        return data.value
+    }
+    const setMenu = (arr: Menu[]) => {
+        data.value = arr
+    }
+    const setTempMenu = () => {
+        data.value = tempMenu
+    }
+    return { data, init, getMenu, setMenu, setTempMenu }
+})
+
+const tempMenu = [
+
+    {
+        id: 2,
+        title: 'Components',
+        path: '',
+        icon: 'List',
+        useYn: 'Y',
+        children: [
+            {
+                id: 101,
+                title: 'MainLayout',
+                path: '/components/MainLayout',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'MainHeader',
+                path: '/components/MainHeader',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'MainHeader',
+                path: '/components/MainHeader',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'PageHeader',
+                path: '/components/PageHeader',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'PageBody',
+                path: '/components/PageBody',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'BasicDialog',
+                path: '/components/BasicDialog',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'LeftMenu',
+                path: '/components/LeftMenu',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'SearchBox',
+                path: '/components/SearchBox',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'SearchText',
+                path: '/components/SearchText',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'SearchText',
+                path: '/components/SearchText',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'OperationBox',
+                path: '/components/OperationBox',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'OperationButton',
+                path: '/components/OperationButton',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'Pagination',
+                path: '/components/Pagination',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'DoubleDatePicker',
+                path: '/components/DoubleDatePicker',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'SingleDatePicker',
+                path: '/components/SingleDatePicker',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'StatsDatePicker',
+                path: '/components/StatsDatePicker',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'DropdownList',
+                path: '/components/DropdownList',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'DropdownTreeList',
+                path: '/components/DropdownTreeList',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'FileUpload',
+                path: '/components/FileUpload',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'FileDragUpload',
+                path: '/components/FileDragUpload',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'TitleDivider',
+                path: '/components/TitleDivider',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'KMap',
+                path: '/components/KMap',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'LineBarChart',
+                path: '/components/LineBarChart',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'LineChart',
+                path: '/components/LineChart',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'PieChart',
+                path: '/components/PieChart',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'GridTable',
+                path: '/components/GridTable',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'Editor',
+                path: '/components/Editor',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'FullscreenProgress',
+                path: '/components/FullscreenProgress',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'ConfigProvider',
+                path: '/components/ConfigProvider',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'Feedback',
+                path: '/components/Feedback',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+        ],
+    },
+    {
+        id: 101,
+        title: 'Tools',
+        path: '/components/Utils',
+        icon: 'Tools',
+        useYn: 'Y',
+        children: [
+            {
+                id: 101,
+                title: 'Utils',
+                path: '/components/Utils',
+                icon: 'Tools',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+            {
+                id: 101,
+                title: 'ExcelDownload',
+                path: '/components/Excel',
+                icon: '',
+                authAction: 'GET,PUT,POST,DELETE',
+                useYn: 'Y',
+                children: [],
+            },
+        ],
+    },
+    {
+        id: 1,
+        title: 'About',
+        path: '/components/About',
+        icon: 'List',
+        useYn: 'Y',
+        children: [],
+    },
+]
