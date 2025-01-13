@@ -36,7 +36,7 @@ const {
     FileUpload,
     FileDragUpload,
     TitleDivider,
-    UserInfo,
+    LeftMenuHeader,
     SearchText,
     KMap,
     LineBarChart,
@@ -72,7 +72,7 @@ export {
     FileUpload,
     FileDragUpload,
     TitleDivider,
-    UserInfo,
+    LeftMenuHeader,
     SearchText,
     KMap,
     LineBarChart,
@@ -110,7 +110,7 @@ export default {
         app.component('FileUpload', FileUpload)
         app.component('FileDragUpload', FileDragUpload)
         app.component('TitleDivider', TitleDivider)
-        app.component('UserInfo', UserInfo)
+        app.component('LeftMenuHeader', LeftMenuHeader)
         app.component('SearchText', SearchText)
         app.component('KonvaMap', KMap)
         app.component('LineBarChart', LineBarChart)

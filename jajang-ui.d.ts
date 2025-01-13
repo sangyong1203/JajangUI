@@ -7,6 +7,7 @@ declare module 'jajang-ui' {
   export const PageBody: DefineComponent<{}, {}, any>;
   export const BasicDialog: DefineComponent<{}, {}, any>;
   export const LeftMenu: DefineComponent<{}, {}, any>;
+  export const LeftMenuHeader: DefineComponent<{}, {}, any>;
   export const SearchBox: DefineComponent<{}, {}, any>;
   export const OperationBox: DefineComponent<{}, {}, any>;
   export const OperationButton: DefineComponent<{}, {}, any>;
@@ -19,7 +20,6 @@ declare module 'jajang-ui' {
   export const FileUpload: DefineComponent<{}, {}, any>;
   export const FileDragUpload: DefineComponent<{}, {}, any>;
   export const TitleDivider: DefineComponent<{}, {}, any>;
-  export const UserInfo: DefineComponent<{}, {}, any>;
   export const SearchText: DefineComponent<{}, {}, any>;
   export const KMap: DefineComponent<{}, {}, any>;
   export const LineChart: DefineComponent<{}, {}, any>;

@@ -23,7 +23,7 @@ export  {default as DropdownTreeList, type DropdownTreeListProps } from './widge
 export  {default as FileUpload, type FileUploadProps } from './widget/FileUpload.vue';
 export  {default as FileDragUpload, type FileDragUploadProps } from './widget/FileDragUpload.vue';
 export  {default as TitleDivider } from './widget/TitleDivider.vue';
-export  {default as UserInfo, type UserInfoProps } from './widget/UserInfo.vue';
+export  {default as LeftMenuHeader, type LeftMenuHeaderProps } from './widget/LeftMenuHeader.vue';
 export  {default as SearchText, type SearchTextProps } from './widget/SearchText.vue';
 export  {default as KMap } from './widget/KMap.vue';
 export  {default as LineBarChart, type LineBarChartProps } from './widget/LineBarChart.vue';
