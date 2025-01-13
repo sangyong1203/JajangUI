@@ -2,7 +2,7 @@
     
         <MainLayout :footerLogoUrl="logoFooter" copyright="---" :menu="[]">
             <template #main-header>
-                <MainHeader systemName="UI Libarary Documents" logoUrl=""> </MainHeader>
+                <MainHeader systemName="UI Libarary Documents" :logoUrl="logo"> </MainHeader>
             </template>
             <template #side-menu>
                 <LeftMenu :menu="state.menu" defaultActivate="">

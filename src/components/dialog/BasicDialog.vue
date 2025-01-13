@@ -56,7 +56,7 @@
 
 <script lang="ts" setup>
 import { onMounted, toRefs } from 'vue'
-import { OperationButton } from '@/components'
+import { OperationButton } from '@/components/index.ts'
 
 type AuthType = 'GET' | 'POST' | 'PUT' | 'DELETE'
 export interface BasicDialogProps {
