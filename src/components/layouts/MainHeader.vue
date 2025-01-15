@@ -12,10 +12,8 @@
                 </el-col>
                 <el-col :span="10">
                     <div class="header-right">
-                        <div class="time">
-                            <span style="font-size: 14px">현재시간 : </span>
-                            <span style="font-size: 14px">{{ dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss') }}</span>
-                        </div>
+                        <CurrentTime label="현재시간"/>
+                        <DarkModeSwitcher/>
                         <el-button type="primary" circle @click="logOut()" class="logout" >
                             <el-icon ><SwitchButton/></el-icon>
                         </el-button>
@@ -29,7 +27,6 @@
 </template>
 
 <script lang="ts" setup>
-import dayjs from 'dayjs'
 
 export interface MainHeaderProps {
     logoUrl: string

@@ -14,8 +14,8 @@
         @close="onClose"
     >
         <template #header>
-            <span style="font-size: 20px">{{ title }}</span>
-            <span style="font-size: 12px; margin-left: 16px; margin-bottom: 2px; color: gray" v-show="description">
+            <span class="dialog-title">{{ title }}</span>
+            <span class="dialog-description" v-show="description">
                 {{ '* ' + description }}</span
             >
         </template>
@@ -110,6 +110,12 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+.dialog-title{
+    font-size: 20px;
+}
+.dialog-description{
+    font-size: 12px; margin-left: 16px; margin-bottom: 2px; color: gray;
+}
 .dialog-footer {
     display: flex;
     justify-content: center;

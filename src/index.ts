@@ -45,7 +45,9 @@ const {
     GridTable,
     Editor,
     FullscreenProgress,
-    ConfigProvider
+    ConfigProvider,
+    CurrentTime,
+    DarkModeSwitcher
 } = JajangUI
 export {
     Feedback,
@@ -81,7 +83,9 @@ export {
     GridTable,
     Editor,
     FullscreenProgress,
-    ConfigProvider
+    ConfigProvider,
+    CurrentTime,
+    DarkModeSwitcher
 }
 
 
@@ -119,11 +123,12 @@ export default {
         app.component('Editor', Editor)
         app.component('FullscreenProgress', FullscreenProgress)
         app.component('ConfigProvider', ConfigProvider)
+        app.component('CurrentTime', CurrentTime)
+        app.component('DarkModeSwitcher', DarkModeSwitcher)
 
         // ElementPlus 아이콘 등록
         for (const [key, component] of Object.entries(ElIconModules)) {
             app.component(key, component)
         }
-        console.log('JajangUI installed!')
     },
 }

@@ -33,5 +33,7 @@ export  {default as GridTable, type GridTableProps } from './widget/GridTable.vu
 export  {default as Editor, type EditorProps } from './widget/Editor.vue';
 export  {default as FullscreenProgress } from './widget/FullscreenProgress.vue';
 export  {default as ConfigProvider, type ConfigProviderProps } from './widget/ConfigProvider.vue';
+export  {default as CurrentTime } from './widget/CurrentTime.vue';
+export  {default as DarkModeSwitcher } from './widget/DarkModeSwitcher.vue';
 
 
