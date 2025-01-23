@@ -2,7 +2,7 @@ import type { App } from 'vue'
 import '@/assets/css/main.scss'
 import 'tui-date-picker/dist/tui-date-picker.css' // use datepicker
 import 'element-plus/dist/index.css'
-// import print from 'vue3-print-nb' // 프린트기능
+import print from 'vue3-print-nb' // 프린트기능
 import TuiGrid from 'vue3-tui-grid'
 import VueKonva from 'vue-konva'
 import * as ElIconModules from '@element-plus/icons-vue' // ElementPlus 아이콘
@@ -92,7 +92,7 @@ export {
 
 export default {
     install(app: App) {
-        // app.use(print)
+        app.use(print)
         app.use(pinia)
         app.use(TuiGrid)
         app.use(VueKonva)

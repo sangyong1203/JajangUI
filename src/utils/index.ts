@@ -1,6 +1,7 @@
 import fileDownload from 'js-file-download'
 import dayjs from 'dayjs'
 import { ElNotification } from 'element-plus'
+import html2canvas from 'html2canvas'
 
 /**
  * 각종 정규식 
@@ -311,6 +312,65 @@ export const setNewpageSession = () => {
     setTimeout(() => {
         localStorage.removeItem('mommoss-user')
     }, 1000)
+}
+
+/**
+ * 전화번호 입력시 숫자만 입력가능하고 '010-1234-5678' 격식인 전화번호로 format한다.
+ * phoneFormatter와 아래  parsePhone 메소드를 같이 사용해야 한다.
+ * phoneFormatter 와 parsePhone 메소드를 el-input에 :formatter="phoneFormatter" :parser="parsePhone"  추가하면 된다.
+ * 기타: 입력된 전화번호를 '010-1234-5678' 격식으로 변환만하려면  phoneFormatter만 사용하면 된다
+ * @param value
+ * @returns string 예: '010-1234-5678' 격식인 문자
+ */
+export const phoneFormatter = (value: string) => {
+    if (!value) return ''
+    const numbers = value.replace(/\D/g, '')
+    console.log('phoneFormatter', numbers)
+
+    if (numbers.length <= 3) {
+        return numbers
+    } else if (numbers.length > 3 && numbers.length <= 6) {
+        return numbers.slice(0, 3) + '-' + numbers.slice(3, 6)
+    } else if (numbers.length >= 6 && numbers.length <= 10) {
+        return numbers.slice(0, 3) + '-' + numbers.slice(3, 6) + '-' + numbers.slice(6)
+    } else if (numbers.length === 11) {
+        return numbers.slice(0, 3) + '-' + numbers.slice(3, 7) + '-' + numbers.slice(7)
+    }
+    return numbers
+}
+/**
+ * 전화번호에 '-'부호를 제거
+ * @param value
+ * @returns
+ */
+export const phoneParse = (value: string) => {
+    return value.replace(/-/g, '')
+}
+// -----------------------------
+
+/**
+ * el-table에 :index 속성에 사용되며  Index 번호를 계산는 함수.
+ * @param rowSize
+ * @param page
+ * @returns
+ */
+export const indexMethod = (rowSize: number, page: number) => {
+    return rowSize * (page - 1) + 1
+}
+
+/**
+ * element param의 원소에 내용을 이미지로 다운로드하는 함수.
+ * @param element  type: HTMLElement
+ */
+export const pngDownload = (element: HTMLElement) => {
+    element &&
+        html2canvas(element).then(canvas => {
+            const imgData = canvas.toDataURL('image/png')
+            const link = document.createElement('a')
+            link.href = imgData
+            link.download = 'downloaded_png_file.png'
+            link.click()
+        })
 }
 export default {
     REG_EXPS,

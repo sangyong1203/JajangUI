@@ -1,17 +1,18 @@
-import Excel from '@/xlsx/Excel.module.js'
+import Excel from './Excel.module.js'
 import dayjs from 'dayjs'
 
 /**
  * 데티어 테이블 리스트 데이터로 엑셀생성
  * @param downloadData Array  데이터 테이블 리스트 
- * @param title String 엑셀 테이블의 헤더 타이틀
+ * @param title String 엑셀 테이블의 헤더 타이틀. ''빈값을 줄때는 sheet에 타이틀이 나타나지 안는다.
  * @param tableHeaders String 각 컬럼 명 설정 string 배열 형식, 예: ['사용자명', '사용자아이디', '등록일', '수정일']
  * @param fileName String 엑셀파일 명 
  * @example 
- * 예: downLoadExcel(tableData, '사용자목록',  ['사용자명', '사용자아이디', '등록일', '수정일'],  '사용자목록엑셀파일일')
+ * 예: makeExcelAndDownload(tableData, '사용자목록',  ['사용자명', '사용자아이디', '등록일', '수정일'],  '사용자목록엑셀파일')
  */
-export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: string[], fileName?: string) => {
+export const makeExcelAndDownload = (downloadData:any[], title:string, tableHeaders: string[], fileName: string) => {
 
+    // --------------sheet style ---------------------
     const columStyle = { // 마지막 빈 컬럼 hiden
         height: 24,
         width: 1,
@@ -32,7 +33,6 @@ export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: st
         backgroundColor: '#f1f1f1',
         fontWeight: 'bold',
         fontSize: 10,
-        width: 'auto'
     }
     const indexNumber = {
         textAlign: 'center',
@@ -46,10 +46,12 @@ export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: st
         border: '1px solid #000000',
         verticalAlign: 'middle',
         fontSize: 10,
-        width: 'auto',
+        width: 140,
         height: 24,
     }
+    //-------------------------------------
 
+    // sheet table에 컬럼 해더 명 데이터 생성 
     const tableHeaderList:any = []
     makeHeaderRow(tableHeaders)
     function makeHeaderRow(headers: string[]){
@@ -65,10 +67,15 @@ export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: st
             tableHeaderList.push(item)
         })
     } 
-
+    // sheet 기본 데이터 생성 
     const sheet1 = {
         name: 'Sheet1',
-        data: [
+        data: [ tableHeaderList ], // 컬럼 해더 
+    }
+    // title에 값이 있으면 테이블 컬럼 해더 행 위에 타이틀 추가 
+    if(title){
+        sheet1.data.unshift([{ style: columStyle }])
+        sheet1.data.unshift(
             [
                 {
                     text: title,
@@ -76,11 +83,11 @@ export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: st
                     rowspan: 2,
                     style: Object.assign({},titleStyle),
                 },
-            ],
-            [{ style: columStyle }],
-            tableHeaderList,
-        ],
+                { style: columStyle }
+            ]
+        )
     }
+    // 데이터 리스트 추가 
     for (let i = 0; i < downloadData.length; i++) {
             const keys = Object.keys(downloadData[i])
             const row = []
@@ -101,8 +108,4 @@ export const downLoadExcel = (downloadData:any[], title:string, tableHeaders: st
     }
 
     Excel.make([sheet1], (fileName??('downloadExcel'+ dayjs(new Date()).format('YYYY-MM-DD'))) )
-}
-
-export default {
-    downLoadExcel
 }
