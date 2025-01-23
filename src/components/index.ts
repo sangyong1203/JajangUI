@@ -1,8 +1,8 @@
 export  {default as Feedback } from '../feedback/index.ts';
 export  {default as Utils} from '../utils/index.ts';
-export  {default as Excel} from '../xlsx/index.ts';
+export  { makeExcelAndDownload } from '../xlsx/index.ts';
 export  { useProgress } from '../stores/Progress.ts';
-export  { useNavigation} from '../stores/Navigation.ts';
+export  { useNavigation } from '../stores/Navigation.ts';
 export  { useRequestDefence } from '../stores/RequestDefence.ts';
 
 export  {default as MainHeader, type MainHeaderProps} from './layouts/MainHeader.vue';
